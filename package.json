@@ -1,0 +1,12 @@
+{
+  "name": "presentations",
+  "version": "0.0.0",
+  "description": "My node.js presentations.",
+  "dependencies": {
+    "tslide": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dominictarr/presentations.git"
+  }
+}
