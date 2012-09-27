@@ -107,7 +107,7 @@ dest|source.emit('end'|'close'|'error')
     (two entities communicate)
 
 # Through, illustrated
-
+```
   user--,
         |
         v
@@ -119,9 +119,9 @@ dest|source.emit('end'|'close'|'error')
         |
         |
   user<-/
-
+```
 # Duplex, Illustrated.
-
+```
                                ///////////////////////
                                |                     |
              ,--------------------,                  |
@@ -135,6 +135,7 @@ user <-------|emits 'data', 'end' <==                |
                                |                     |
                                |                     |
                                \\\\\\\\\\\\\\\\\\\\\\!
+```
 # Through is used like this:
 
 ``` js
