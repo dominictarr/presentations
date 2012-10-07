@@ -161,8 +161,6 @@ is both idempotent and commutative)
 
   * __delete = true
 
-
-
     (or something like that)
 
 # More interesting Model: Sequences.
@@ -238,10 +236,6 @@ todo.on('add', function (row) {
 ```
 
 # Any Questions?
-
-
-
-
 
 
 
