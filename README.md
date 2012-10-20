@@ -21,6 +21,5 @@ LNUG, London, 26 September 2012
 
 Reject.js, Berlin, 4 October 2012
 
-[tslide distributed-systems-4-realtime.md](https://github.com/dominictarr/presentations/blob/master/distributed-systems-4-realtime.md)
-
+[tslide duplo-and-crayons.md](https://github.com/dominictarr/presentations/blob/master/duplo-and-crayons.md)
 
