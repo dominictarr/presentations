@@ -1,0 +1,32 @@
+div {
+  font-family: Computer Modern Serif;
+}
+
+pre {
+//  background: #333;
+}
+
+code {
+  font-family: Computer Modern Typewriter Light;
+}
+
+
+.punct               {color: grey}
+.string1, .string2   {color: yellow}
+.number              {color: orange}
+.keyword             {color: green}
+.comment1, .comment2 {color: blue}
+.regexp              {color: lightblue}
+.invalid             {background: red}
+.name                {color: #ccc}
+.code                {background: #333; padding: 10px}
+.cursor              {background: hsla(0, 0%, 100%, 0.5)}
+
+img {
+  width: 150px;
+  text-align: center;
+}
+
+h1, h2, h3 {
+  text-align: center;
+}

@@ -1,0 +1,796 @@
+<DOCTYPE html><style>div {
+  font-family: Computer Modern Serif;
+}
+
+pre {
+//  background: #333;
+}
+
+code {
+  font-family: Computer Modern Typewriter Light;
+}
+
+
+.punct               {color: grey}
+.string1, .string2   {color: yellow}
+.number              {color: orange}
+.keyword             {color: green}
+.comment1, .comment2 {color: blue}
+.regexp              {color: lightblue}
+.invalid             {background: red}
+.name                {color: #ccc}
+.code                {background: #333; padding: 10px}
+.cursor              {background: hsla(0, 0%, 100%, 0.5)}
+
+img {
+  width: 150px;
+  text-align: center;
+}
+
+h1, h2, h3 {
+  text-align: center;
+}
+</style><style>pre {
+  background-color: rgb(248, 248, 248);
+  border: 1px solid rgb(221, 221, 221);
+  padding:  6px 10px 6px 10px;
+}
+
+.highlight {
+//  background: #ffffff;
+}
+
+.highlight .c {
+  color: #999988;
+  font-style: italic;
+}
+
+.highlight .err {
+  color: #a61717;
+  background-color: #e3d2d2;
+}
+
+.highlight .k {
+  font-weight: bold;
+}
+
+.highlight .o {
+  font-weight: bold;
+}
+
+.highlight .cm {
+  color: #999988;
+  font-style: italic;
+}
+
+.highlight .cp {
+  color: #999999;
+  font-weight: bold;
+}
+
+.highlight .c1 {
+  color: #999988;
+  font-style: italic;
+}
+
+.highlight .cs {
+  color: #999999;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.highlight .gd {
+  color: #000000;
+  background-color: #ffdddd;
+}
+
+.highlight .gd .x {
+  color: #000000;
+  background-color: #ffaaaa;
+}
+
+.highlight .ge {
+  font-style: italic;
+}
+
+.highlight .gr {
+  color: #aa0000;
+}
+
+.highlight .gh {
+  color: #999999;
+}
+
+.highlight .gi {
+  color: #000000;
+  background-color: #ddffdd;
+}
+
+.highlight .gi .x {
+  color: #000000;
+  background-color: #aaffaa;
+}
+
+.highlight .go {
+  color: #888888;
+}
+
+.highlight .gp {
+  color: #555555;
+}
+
+.highlight .gs {
+  font-weight: bold;
+}
+
+.highlight .gu {
+  color: #800080;
+  font-weight: bold;
+}
+
+.highlight .gt {
+  color: #aa0000;
+}
+
+.highlight .kc {
+  font-weight: bold;
+}
+
+.highlight .kd {
+  font-weight: bold;
+}
+
+.highlight .kn {
+  font-weight: bold;
+}
+
+.highlight .kp {
+  font-weight: bold;
+}
+
+.highlight .kr {
+  font-weight: bold;
+}
+
+.highlight .kt {
+  color: #445588;
+  font-weight: bold;
+}
+
+.highlight .m {
+  color: #009999;
+}
+
+.highlight .s {
+  color: #d14;
+}
+
+.highlight .n {
+  color: #333333;
+}
+
+.highlight .na {
+  color: #008080;
+}
+
+.highlight .nb {
+  color: #0086B3;
+}
+
+.highlight .nc {
+  color: #445588;
+  font-weight: bold;
+}
+
+.highlight .no {
+  color: #008080;
+}
+
+.highlight .ni {
+  color: #800080;
+}
+
+.highlight .ne {
+  color: #990000;
+  font-weight: bold;
+}
+
+.highlight .nf {
+  color: #990000;
+  font-weight: bold;
+}
+
+.highlight .nn {
+  color: #555555;
+}
+
+.highlight .nt {
+  color: #000080;
+}
+
+.highlight .nv {
+  color: #008080;
+}
+
+.highlight .ow {
+  font-weight: bold;
+}
+
+.highlight .w {
+  color: #bbbbbb;
+}
+
+.highlight .mf {
+  color: #009999;
+}
+
+.highlight .mh {
+  color: #009999;
+}
+
+.highlight .mi {
+  color: #009999;
+}
+
+.highlight .mo {
+  color: #009999;
+}
+
+.highlight .sb {
+  color: #d14;
+}
+
+.highlight .sc {
+  color: #d14;
+}
+
+.highlight .sd {
+  color: #d14;
+}
+
+.highlight .s2 {
+  color: #d14;
+}
+
+.highlight .se {
+  color: #d14;
+}
+
+.highlight .sh {
+  color: #d14;
+}
+
+.highlight .si {
+  color: #d14;
+}
+
+.highlight .sx {
+  color: #d14;
+}
+
+.highlight .sr {
+  color: #009926;
+}
+
+.highlight .s1 {
+  color: #d14;
+}
+
+.highlight .ss {
+  color: #990073;
+}
+
+.highlight .bp {
+  color: #999999;
+}
+
+.highlight .vc {
+  color: #008080;
+}
+
+.highlight .vg {
+  color: #008080;
+}
+
+.highlight .vi {
+  color: #008080;
+}
+
+.highlight .il {
+  color: #009999;
+}
+
+</style><link rel=stylesheet href=Serif/cmun-serif.css><link rel=stylesheet href="Typewriter Light/cmun-typewriter-light.css"></div>
+<div class=slide name=slide0.5>
+<h1>The Database of the Future</h1>
+<p>@dominictarr, Mad Scientist</p>
+<p>nearForm.com</p>
+</div>
+<div class=slide name=slide1.5>
+<h1>Databases of the past</h1>
+<ul>
+<li>navigational databases</li>
+<li>sql &quot;relational&quot; databases</li>
+<li>nosql &quot;key-value&quot; databases</li>
+</ul>
+</div>
+<div class=slide name=slide2.5>
+<h1>Distant Past - navigational databases.</h1>
+<ul>
+<li>database was tree of sets</li>
+<li>based on linked lists</li>
+<li>may have to iterate over whole database/set to query!</li>
+</ul>
+</div>
+<div class=slide name=slide3.5>
+<h1>Recent Past:</h1>
+<ul>
+<li>SQL &quot;relational&quot; databases</li>
+<li>define schemas, tables</li>
+<li>fairly rich queries with query planner</li>
+<li>transactions</li>
+<li>optimized for inplace updates</li>
+<li>based on Relational Algebra.</li>
+</ul>
+</div>
+<div class=slide name=slide4.5>
+<h1>Present - noSQL</h1>
+<ul>
+<li>usually key-value, probably materialize your queries with map-reduce,</li>
+<li>usually no transactions, maybe batch operations.</li>
+<li>diverse: Redis, graph databases.</li>
+</ul>
+</div>
+<div class=slide name=slide5.5>
+<h1>the more things change, the more they stay the same.</h1>
+<ul>
+<li>request/response
+ask a database a question, get an answer.</li>
+<li>monolithic service.</li>
+<li>cheaper to take computation to the data,
+so there is a extension language - SQL, or JS.</li>
+</ul>
+</div>
+<div class=slide name=slide6.5>
+<h1>Database of the future</h1>
+<ul>
+<li>Modular.</li>
+<li>Realtime.</li>
+<li>Replication.</li>
+</ul>
+</div>
+<div class=slide name=slide7.5>
+<h1>Standing on the Shoulders of Giants</h1>
+<ul>
+<li>new kinds of wheels for a new kind of road.</li>
+</ul>
+</div>
+<div class=slide name=slide8.5>
+<h1>LevelDb</h1>
+<ul>
+<li><a href="chrome://credits/">chrome://credits/</a></li>
+<li>Open Source by Google PHDs.</li>
+<li>Log Structured Merge Tree</li>
+<li>fast range queries.</li>
+</ul>
+</div>
+<div class=slide name=slide9.5>
+<h1>philosophy</h1>
+<p>Unix Philosophy</p>
+<ul>
+<li>build many small tools that work together.</li>
+</ul>
+<p>Emacs Philosophy</p>
+<ul>
+<li>build a tight core in C</li>
+<li>many extensions in a flexible
+in a flexible dynamic language</li>
+</ul>
+</div>
+<div class=slide name=slide10.5>
+<h1>Node.js Philosophy</h1>
+<p>Node.js = Emacs Philosophy + Unix Philosophy</p>
+<p>(small core - big userland on npm!)</p>
+</div>
+<div class=slide name=slide11.5>
+<h1>Basic Operations</h1>
+<pre><code class="lang-js"><span class=highlight><span class=kd>var</span><span class=w> </span><span class=nx>db</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=nx>require</span><span class=p>(</span><span class=s2>'levelup'</span><span class=p>)</span><span class=p>(</span><span class=nx>path_to_db</span><span class=p>)</span><span class=w>
+
+</span><span class=nx>db</span><span class=p>.</span><span class=nx>get</span><span class=p>(</span><span class=nx>key</span><span class=p>,</span><span class=w> </span><span class=kd>function</span><span class=w> </span><span class=p>(</span><span class=nx>err</span><span class=p>,</span><span class=w> </span><span class=nx>value</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=p>.</span><span class=p>.</span><span class=p>.</span><span class=p>}</span><span class=p>)</span><span class=w>
+
+</span><span class=nx>db</span><span class=p>.</span><span class=nx>put</span><span class=p>(</span><span class=nx>key</span><span class=p>,</span><span class=w> </span><span class=nx>value</span><span class=p>,</span><span class=w> </span><span class=kd>function</span><span class=w> </span><span class=p>(</span><span class=nx>err</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=p>.</span><span class=p>.</span><span class=p>.</span><span class=p>}</span><span class=p>)</span><span class=w>
+
+</span><span class=nx>db</span><span class=p>.</span><span class=nx>del</span><span class=p>(</span><span class=nx>key</span><span class=p>,</span><span class=w> </span><span class=kd>function</span><span class=w> </span><span class=p>(</span><span class=nx>err</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=p>.</span><span class=p>.</span><span class=p>.</span><span class=p>}</span><span class=p>)</span></span></code></pre>
+</div>
+<div class=slide name=slide12.5>
+<h1>More operations</h1>
+<pre><code class="lang-js"><span class=highlight><span class=nx>db</span><span class=p>.</span><span class=nx>batch</span><span class=p>(</span><span class=p>[</span><span class=w>
+  </span><span class=p>{</span><span class=nx>key</span><span class=p>:</span><span class=w> </span><span class=nx>key1</span><span class=p>,</span><span class=w> </span><span class=nx>value</span><span class=p>:</span><span class=w> </span><span class=nx>value</span><span class=p>,</span><span class=w> </span><span class=nx>type</span><span class=p>:</span><span class=w> </span><span class=s2>'put'</span><span class=p>}</span><span class=p>,</span><span class=w>
+  </span><span class=p>{</span><span class=nx>key</span><span class=p>:</span><span class=w> </span><span class=nx>key2</span><span class=p>,</span><span class=w>               </span><span class=nx>type</span><span class=p>:</span><span class=w> </span><span class=s2>'del'</span><span class=p>}</span><span class=w>
+</span><span class=p>]</span><span class=p>,</span><span class=w> </span><span class=kd>function</span><span class=w> </span><span class=p>(</span><span class=nx>err</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=p>.</span><span class=p>.</span><span class=p>.</span><span class=p>}</span><span class=p>)</span><span class=w>
+
+</span><span class=nx>db</span><span class=p>.</span><span class=nx>createReadStream</span><span class=p>(</span><span class=p>{</span><span class=nx>start</span><span class=p>:</span><span class=w> </span><span class=nx>s</span><span class=p>,</span><span class=w> </span><span class=nx>end</span><span class=p>:</span><span class=w> </span><span class=nx>e</span><span class=p>,</span><span class=w> </span><span class=nx>reverse</span><span class=p>:</span><span class=w> </span><span class=nx>r</span><span class=p>}</span><span class=p>)</span></span></code></pre>
+</div>
+<div class=slide name=slide13.5>
+<h1>get real-time data, LevelUp</h1>
+<pre><code class="lang-js"><span class=highlight><span class=kd>var</span><span class=w> </span><span class=nx>LiveStream</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=nx>require</span><span class=p>(</span><span class=s2>'level-live-stream'</span><span class=p>)</span><span class=w>
+</span><span class=kd>var</span><span class=w> </span><span class=nx>through</span><span class=w>    </span><span class=p>=</span><span class=w> </span><span class=nx>require</span><span class=p>(</span><span class=s2>'through'</span><span class=p>)</span><span class=w>
+
+</span><span class=nx>LiveStream</span><span class=p>(</span><span class=nx>db</span><span class=p>)</span><span class=w>
+  </span><span class=p>.</span><span class=nx>pipe</span><span class=p>(</span><span class=nx>through</span><span class=p>(</span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>)</span><span class=p>)</span></span></code></pre>
+</div>
+<div class=slide name=slide14.5>
+<h1>Group by</h1>
+<pre><code class="lang-js"><span class=highlight><span class=kd>var</span><span class=w> </span><span class=nx>MapReduce</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=nx>require</span><span class=p>(</span><span class=s2>'map-reduce'</span><span class=p>)</span><span class=w>
+
+</span><span class=kd>var</span><span class=w> </span><span class=nx>mapDb</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=nx>MapReduce</span><span class=p>(</span><span class=nx>db</span><span class=p>,</span><span class=w> </span><span class=s2>'count'</span><span class=p>,</span><span class=w> </span><span class=kd>function</span><span class=w> </span><span class=p>(</span><span class=nx>key</span><span class=p>,</span><span class=w> </span><span class=nx>value</span><span class=p>,</span><span class=w> </span><span class=nx>emit</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+  </span><span class=nx>value</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=nx>JSON</span><span class=p>.</span><span class=nx>parse</span><span class=p>(</span><span class=nx>value</span><span class=p>)</span><span class=w>
+  </span><span class=nx>emit</span><span class=p>(</span><span class=p>[</span><span class=nx>value</span><span class=p>.</span><span class=nx>bar</span><span class=p>]</span><span class=p>,</span><span class=w> </span><span class=mi>1</span><span class=p>)</span><span class=w>
+</span><span class=p>}</span><span class=p>,</span><span class=w> </span><span class=kd>function</span><span class=w> </span><span class=p>(</span><span class=nx>acc</span><span class=p>,</span><span class=w> </span><span class=nx>item</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+  </span><span class=kd>return</span><span class=w> </span><span class=nx>Number</span><span class=p>(</span><span class=nx>acc</span><span class=w> </span><span class=p>|</span><span class=p>|</span><span class=w> </span><span class=mi>0</span><span class=p>)</span><span class=w> </span><span class=p>+</span><span class=w> </span><span class=nx>Number</span><span class=p>(</span><span class=nx>item</span><span class=p>)</span><span class=w>
+</span><span class=p>}</span><span class=p>)</span></span></code></pre>
+</div>
+<div class=slide name=slide15.5>
+<h1>query that aggregate:</h1>
+<pre><code class="lang-js"><span class=highlight><span class=nx>mapDb</span><span class=p>.</span><span class=nx>createReadStream</span><span class=p>(</span><span class=p>{</span><span class=nx>range</span><span class=p>:</span><span class=w> </span><span class=p>[</span><span class=p>]</span><span class=p>}</span><span class=p>)</span><span class=w>
+
+</span><span class=c>//for real time...
+</span><span class=nx>mapDb</span><span class=p>.</span><span class=nx>createReadStream</span><span class=p>(</span><span class=p>{</span><span class=nx>range</span><span class=p>:</span><span class=w> </span><span class=p>[</span><span class=nx>bar</span><span class=p>]</span><span class=p>,</span><span class=w> </span><span class=nx>tail</span><span class=p>:</span><span class=w> </span><span class=nx>true</span><span class=p>}</span><span class=p>)</span></span></code></pre>
+</div>
+<div class=slide name=slide16.5>
+<h1>partition data</h1>
+<pre><code class="lang-js"><span class=highlight><span class=kd>var</span><span class=w> </span><span class=nx>SubLevel</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=nx>require</span><span class=p>(</span><span class=s2>'level-sublevel'</span><span class=p>)</span><span class=w>
+</span><span class=nx>SubLevel</span><span class=p>(</span><span class=nx>db</span><span class=p>)</span><span class=w>
+
+</span><span class=kd>var</span><span class=w> </span><span class=nx>fooDb</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=nx>db</span><span class=p>.</span><span class=nx>sublevel</span><span class=p>(</span><span class=s2>'foo'</span><span class=p>)</span><span class=w>
+
+</span><span class=c>//NESTED PARTITIONS! 
+</span><span class=kd>var</span><span class=w> </span><span class=nx>fooBarDb</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=nx>fooDb</span><span class=p>.</span><span class=nx>sublevel</span><span class=p>(</span><span class=s2>'bar'</span><span class=p>)</span></span></code></pre>
+</div>
+<div class=slide name=slide17.5>
+<h1>Extending levelup</h1>
+<pre><code class="lang-js"><span class=highlight><span class=nx>module</span><span class=p>.</span><span class=nx>exports</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=kd>function</span><span class=w> </span><span class=p>(</span><span class=nx>db</span><span class=p>,</span><span class=w> </span><span class=nx>subDb</span><span class=p>,</span><span class=w> </span><span class=nx>args</span><span class=p>.</span><span class=p>.</span><span class=p>.</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+  </span><span class=nx>if</span><span class=p>(</span><span class=s2>'string'</span><span class=w> </span><span class=p>=</span><span class=p>=</span><span class=p>=</span><span class=w> </span><span class=nx>typeof</span><span class=w> </span><span class=nx>subDb</span><span class=p>)</span><span class=w>
+    </span><span class=nx>subDb</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=nx>db</span><span class=p>.</span><span class=nx>sublevel</span><span class=p>(</span><span class=nx>subDb</span><span class=p>)</span><span class=w>
+
+  </span><span class=c>//add new features,
+</span><span class=w>  </span><span class=c>//but don't mutate main db.
+</span><span class=w>  </span><span class=nx>subDb</span><span class=p>.</span><span class=nx>newFeature</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=kd>function</span><span class=w> </span><span class=p>(</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=p>.</span><span class=p>.</span><span class=p>.</span><span class=p>}</span><span class=w>
+</span><span class=p>}</span></span></code></pre>
+</div>
+<div class=slide name=slide18.5>
+<h1>build your own database from parts.</h1>
+<pre><code class="lang-js"><span class=highlight><span class=kd>var</span><span class=w> </span><span class=nx>levelup</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=nx>require</span><span class=p>(</span><span class=s2>'levelup'</span><span class=p>)</span><span class=w>
+</span><span class=kd>var</span><span class=w> </span><span class=nx>sublevel</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=nx>require</span><span class=p>(</span><span class=s2>'level-sublevel'</span><span class=p>)</span><span class=w>
+</span><span class=kd>var</span><span class=w> </span><span class=nx>db</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=nx>sublevel</span><span class=p>(</span><span class=nx>levelup</span><span class=p>(</span><span class=s2>'/tmp/mydb'</span><span class=p>,</span><span class=w> </span><span class=p>{</span><span class=nx>encoding</span><span class=p>:</span><span class=w> </span><span class=s2>'json'</span><span class=p>}</span><span class=p>)</span><span class=p>)</span><span class=w>
+
+</span><span class=kd>var</span><span class=w> </span><span class=nx>MapReduce</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=nx>require</span><span class=p>(</span><span class=s2>'map-reduce'</span><span class=p>)</span><span class=w>
+</span><span class=kd>var</span><span class=w> </span><span class=nx>Master</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=nx>require</span><span class=p>(</span><span class=s2>'level-master'</span><span class=p>)</span><span class=w>
+
+</span><span class=nx>MapReduce</span><span class=p>(</span><span class=nx>db</span><span class=p>,</span><span class=w> </span><span class=s2>'map'</span><span class=p>,</span><span class=w> </span><span class=nx>map</span><span class=p>,</span><span class=w> </span><span class=nx>reduce</span><span class=p>)</span><span class=w>
+</span><span class=nx>Master</span><span class=p>(</span><span class=nx>db</span><span class=p>,</span><span class=s2>'master'</span><span class=p>)</span></span></code></pre>
+</div>
+<div class=slide name=slide19.5>
+<h1>trigger code on insert, SQL</h1>
+<pre><code class="lang-sql"><span class=highlight><span class=nx>DELIMITER</span><span class=w> </span><span class=p>|</span><span class=w> </span><span class=p>-</span><span class=p>-</span><span class=p>-</span><span class=w> </span><span class=nx>My</span><span class=w> </span><span class=nx>Favorite</span><span class=w> </span><span class=nx>SQL</span><span class=w> </span><span class=nx>Feature</span><span class=p>!</span><span class=w>
+
+</span><span class=nx>CREATE</span><span class=w> </span><span class=nx>TRIGGER</span><span class=w> </span><span class=nx>testref</span><span class=w> </span><span class=nx>BEFORE</span><span class=w> </span><span class=nx>INSERT</span><span class=w> </span><span class=nx>ON</span><span class=w> </span><span class=nx>foo</span><span class=w>
+  </span><span class=nx>FOR</span><span class=w> </span><span class=nx>EACH</span><span class=w> </span><span class=nx>ROW</span><span class=w> </span><span class=nx>BEGIN</span><span class=w>
+    </span><span class=nx>INSERT</span><span class=w> </span><span class=nx>INTO</span><span class=w> </span><span class=nx>test2</span><span class=w> </span><span class=nx>SET</span><span class=w> </span><span class=nx>a2</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=nx>NEW</span><span class=p>.</span><span class=nx>a1</span><span class=p>;</span><span class=w>
+  </span><span class=nx>END</span><span class=p>;</span><span class=w>
+</span><span class=p>|</span><span class=w>
+
+</span><span class=nx>DELIMITER</span><span class=w> </span><span class=p>;</span><span class=w>  </span><span class=p>-</span><span class=p>-</span><span class=p>-</span><span class=w> </span><span class=nx>change</span><span class=w> </span><span class=nx>back</span><span class=w> </span><span class=p>|</span><span class=w> </span><span class=p>-</span><span class=p>></span><span class=w> </span><span class=p>;</span></span></code></pre>
+</div>
+<div class=slide name=slide20.5>
+<h1>trigger code on insert</h1>
+<pre><code class="lang-js"><span class=highlight><span class=c>//before a batch/put/del is applied
+</span><span class=nx>db</span><span class=p>.</span><span class=nx>pre</span><span class=p>(</span><span class=kd>function</span><span class=w> </span><span class=p>(</span><span class=nx>ch</span><span class=p>,</span><span class=w> </span><span class=nx>add</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+  </span><span class=nx>add</span><span class=p>(</span><span class=p>{</span><span class=w>
+    </span><span class=nx>type</span><span class=w>  </span><span class=p>:</span><span class=w> </span><span class=s2>'put'</span><span class=p>,</span><span class=w>
+    </span><span class=nx>key</span><span class=w>   </span><span class=p>:</span><span class=w> </span><span class=nx>Date</span><span class=p>.</span><span class=nx>now</span><span class=p>(</span><span class=p>)</span><span class=p>,</span><span class=w>
+    </span><span class=nx>value</span><span class=w> </span><span class=p>:</span><span class=w> </span><span class=s2>'~LOG~'</span><span class=w> </span><span class=p>+</span><span class=w> </span><span class=nx>ch</span><span class=p>.</span><span class=nx>key</span><span class=w>
+  </span><span class=p>}</span><span class=p>)</span><span class=w>
+</span><span class=p>}</span><span class=p>)</span></span></code></pre>
+</div>
+<div class=slide name=slide21.5>
+<h1>can insert in other sublevels!</h1>
+<pre><code class="lang-js"><span class=highlight><span class=kd>var</span><span class=w> </span><span class=nx>logDb</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=nx>db</span><span class=p>.</span><span class=nx>sublevel</span><span class=p>(</span><span class=s2>'log'</span><span class=p>)</span><span class=w>
+
+</span><span class=nx>db</span><span class=p>.</span><span class=nx>pre</span><span class=p>(</span><span class=kd>function</span><span class=w> </span><span class=p>(</span><span class=nx>ch</span><span class=p>,</span><span class=w> </span><span class=nx>add</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+  </span><span class=nx>add</span><span class=p>(</span><span class=p>{</span><span class=w>
+    </span><span class=nx>type</span><span class=p>:</span><span class=w> </span><span class=s2>'put'</span><span class=p>,</span><span class=w> </span><span class=nx>key</span><span class=p>:</span><span class=w> </span><span class=nx>Date</span><span class=p>.</span><span class=nx>now</span><span class=p>(</span><span class=p>)</span><span class=p>,</span><span class=w>
+    </span><span class=nx>value</span><span class=p>:</span><span class=w> </span><span class=nx>ch</span><span class=p>.</span><span class=nx>key</span><span class=p>,</span><span class=w>
+    </span><span class=nx>prefix</span><span class=p>:</span><span class=w> </span><span class=nx>logDb</span><span class=w>
+  </span><span class=p>}</span><span class=p>)</span><span class=w>
+</span><span class=p>}</span><span class=p>)</span></span></code></pre>
+<ul>
+<li>FAQ: why use multiple sublevels
+over multiple databases?</li>
+</ul>
+</div>
+<div class=slide name=slide22.5>
+<h1>arranging your keys for range queries</h1>
+<ul>
+<li>Don&#39;t use <code>:</code> to separate keys.</li>
+</ul>
+<pre><code class="lang-js"><span class=highlight><span class=s2>',.pyfgcrlaoeu:idhtns;qjkbmwv"<>'</span><span class=w> </span><span class=p>+</span><span class=w> 
+</span><span class=s2>'PFCRL?AOEUIQJBMWV!@#$%^&*(){1234567890'</span><span class=w>
+</span><span class=p>.</span><span class=nx>split</span><span class=p>(</span><span class=s2>''</span><span class=p>)</span><span class=p>.</span><span class=nx>sort</span><span class=p>(</span><span class=p>)</span><span class=p>.</span><span class=nx>join</span><span class=p>(</span><span class=s2>''</span><span class=p>)</span><span class=w>
+</span><span class=c>// =>
+</span><span class=s2>'!"#$%&()*,.0123456789:;<>?@ABCEFIJLMOPQRUVW^abcdefghijklmnopqrstuvwy{'</span></span></code></pre>
+</div>
+<div class=slide name=slide23.5>
+<h1>recommended key patterns:</h1>
+<pre><code class="lang-js"><span class=highlight><span class=nx>aaa</span><span class=>\</span><span class=nx>x00bbb</span><span class=w>
+</span><span class=nx>aaa1</span><span class=>\</span><span class=nx>x00bbb</span><span class=w>
+</span><span class=>\</span><span class=nx>xffPREFIX</span><span class=>\</span><span class=nx>xffaaa</span><span class=w>
+
+</span><span class=c>// or
+</span><span class=w>
+</span><span class=nx>aaa</span><span class=p>!</span><span class=nx>bbb</span><span class=w>
+</span><span class=nx>aaa1</span><span class=p>!</span><span class=nx>bbb</span><span class=w>
+</span><span class=>~</span><span class=nx>PREFIX</span><span class=>~</span><span class=nx>aaa</span></span></code></pre>
+</div>
+<div class=slide name=slide24.5>
+<h1>read a range</h1>
+<pre><code class="lang-js"><span class=highlight><span class=nx>db</span><span class=p>.</span><span class=nx>createReadStream</span><span class=p>(</span><span class=p>{</span><span class=nx>start</span><span class=p>:</span><span class=w> </span><span class=s2>'aaa!'</span><span class=p>,</span><span class=w> </span><span class=nx>end</span><span class=p>:</span><span class=w> </span><span class=s2>'aaa!~'</span><span class=p>}</span><span class=p>)</span><span class=w>
+  </span><span class=p>.</span><span class=nx>pipe</span><span class=p>(</span><span class=nx>through</span><span class=p>(</span><span class=p>.</span><span class=p>.</span><span class=p>.</span><span class=p>)</span><span class=p>)</span></span></code></pre>
+</div>
+<div class=slide name=slide25.5>
+<h1>the important of batching</h1>
+<ul>
+<li>update multiple keys atomically
+(all updates fail or succeed)</li>
+<li>example: work queue.</li>
+</ul>
+</div>
+<div class=slide name=slide26.5>
+<h1>trigger async code, LevelUp</h1>
+<pre><code class="lang-js"><span class=highlight><span class=kd>var</span><span class=w> </span><span class=nx>Trigger</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=nx>require</span><span class=p>(</span><span class=s2>'level-trigger'</span><span class=p>)</span><span class=w>
+
+</span><span class=nx>Trigger</span><span class=p>(</span><span class=nx>db</span><span class=p>,</span><span class=w> </span><span class=s2>'job'</span><span class=p>,</span><span class=w> </span><span class=kd>function</span><span class=w> </span><span class=p>(</span><span class=nx>value</span><span class=p>,</span><span class=w> </span><span class=nx>done</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+  </span><span class=c>//perform a job requiring IO.
+</span><span class=p>}</span><span class=p>)</span></span></code></pre>
+<ul>
+<li>guaranteed to be processed at least once.</li>
+</ul>
+</div>
+<div class=slide name=slide27.5>
+<h1>Relational Join, SQL</h1>
+<pre><code class="lang-sql"><span class=highlight><span class=nx>SELECT</span><span class=w> </span><span class=>*</span><span class=w> </span><span class=nx>FROM</span><span class=w> </span><span class=nx>tweets</span><span class=w>
+</span><span class=nx>JOIN</span><span class=w> </span><span class=nx>following</span><span class=w> </span><span class=nx>ON</span><span class=w> </span><span class=nx>tweets</span><span class=p>.</span><span class=nx>author</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=nx>following</span><span class=p>.</span><span class=nx>follows</span><span class=w>
+</span><span class=nx>WHERE</span><span class=w> </span><span class=nx>following</span><span class=p>.</span><span class=nx>follower</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=s2>'dominictarr'</span></span></code></pre>
+<ul>
+<li>kinda useless, for twitter,
+because there is no realtime feature</li>
+</ul>
+</div>
+<div class=slide name=slide28.5>
+<h1>Join aka &quot;fan-out&quot; LevelUp</h1>
+<p>but first: need to structure our data into ranges.</p>
+</div>
+<div class=slide name=slide29.5>
+<h1>Tweets &quot;table&quot;</h1>
+<p>tweetsDb: (where tweets are written to)</p>
+<pre><code class="lang-js"><span class=highlight><span class=nx>author1</span><span class=p>!</span><span class=nx>tweet</span><span class=mi>-1</span><span class=w> </span><span class=p>=</span><span class=p>=</span><span class=p>></span><span class=w> </span><span class=p>[</span><span class=nx>cat</span><span class=w> </span><span class=nx>pictures</span><span class=p>]</span><span class=w>
+</span><span class=nx>author1</span><span class=p>!</span><span class=nx>tweet</span><span class=mi>-2</span><span class=w> </span><span class=p>=</span><span class=p>=</span><span class=p>></span><span class=w> </span><span class=nx>i</span><span class=w> </span><span class=p><</span><span class=mi>3</span><span class=w> </span><span class=nx>bacon</span><span class=w>
+</span><span class=nx>author2</span><span class=p>!</span><span class=nx>tweet</span><span class=mi>-1</span><span class=w> </span><span class=p>=</span><span class=p>=</span><span class=p>></span><span class=w> </span><span class=nx>justin</span><span class=w> </span><span class=nx>bieber</span><span class=p>,</span><span class=w> </span><span class=nx>etc</span></span></code></pre>
+<p>Indexed by <code>authorId, tweetId</code></p>
+</div>
+<div class=slide name=slide30.5>
+<h1>FollowingDb</h1>
+<p>followingDb: (a Many-to-Many join table - added to when someone follows someone)</p>
+<pre><code class="lang-js"><span class=highlight><span class=nx>followed1</span><span class=p>!</span><span class=nx>follower2</span><span class=w> </span><span class=p>=</span><span class=p>></span><span class=w> </span><span class=nx>Date</span><span class=p>,</span><span class=w> </span><span class=nx>etc</span><span class=w> </span><span class=nx>metadata</span></span></code></pre>
+</div>
+<div class=slide name=slide31.5>
+<h1>FeedDb Table</h1>
+<p>feedDb: (where tweets are read from)</p>
+<pre><code class="lang-js"><span class=highlight><span class=nx>follower2</span><span class=p>!</span><span class=nx>tweet</span><span class=mi>-1</span><span class=p>!</span><span class=nx>author1</span><span class=p>!</span><span class=w> </span><span class=p>=</span><span class=p>=</span><span class=p>></span><span class=w> </span><span class=p>[</span><span class=nx>cat</span><span class=w> </span><span class=nx>pictures</span><span class=p>]</span><span class=w>
+</span><span class=nx>follower2</span><span class=p>!</span><span class=nx>tweet</span><span class=mi>-1</span><span class=p>!</span><span class=nx>author2</span><span class=p>!</span><span class=w> </span><span class=p>=</span><span class=p>=</span><span class=p>></span><span class=w> </span><span class=nx>justin</span><span class=w> </span><span class=nx>bieber</span><span class=p>,</span><span class=w> </span><span class=nx>etc</span><span class=w>
+</span><span class=nx>follower2</span><span class=p>!</span><span class=nx>tweet</span><span class=mi>-2</span><span class=p>!</span><span class=nx>author1</span><span class=p>!</span><span class=w> </span><span class=p>=</span><span class=p>=</span><span class=p>></span><span class=w> </span><span class=nx>i</span><span class=w> </span><span class=p><</span><span class=mi>3</span><span class=w> </span><span class=nx>bacon</span></span></code></pre>
+</div>
+<div class=slide name=slide32.5>
+<h1>read followers from followingDb.</h1>
+<pre><code class="lang-js"><span class=highlight><span class=nx>Trigger</span><span class=p>(</span><span class=nx>tweetsDb</span><span class=p>,</span><span class=w> </span><span class=kd>function</span><span class=w> </span><span class=p>(</span><span class=nx>data</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+  </span><span class=kd>return</span><span class=w> </span><span class=nx>data</span><span class=p>.</span><span class=nx>key</span><span class=w>
+</span><span class=p>}</span><span class=p>,</span><span class=w> </span><span class=kd>function</span><span class=w> </span><span class=p>(</span><span class=nx>key</span><span class=p>,</span><span class=w> </span><span class=nx>done</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+  </span><span class=nx>tweetsDb</span><span class=p>.</span><span class=nx>get</span><span class=p>(</span><span class=nx>key</span><span class=p>,</span><span class=w> </span><span class=kd>function</span><span class=w> </span><span class=p>(</span><span class=nx>err</span><span class=p>,</span><span class=w> </span><span class=nx>rawTweet</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+    </span><span class=kd>var</span><span class=w> </span><span class=nx>tweet</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=nx>JSON</span><span class=p>.</span><span class=nx>parse</span><span class=p>(</span><span class=nx>rawTweet</span><span class=p>)</span><span class=w>
+    </span><span class=kd>var</span><span class=w> </span><span class=nx>batch</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=p>[</span><span class=p>]</span><span class=w>
+    </span><span class=nx>followsDb</span><span class=p>.</span><span class=nx>createReadStream</span><span class=p>(</span><span class=p>{</span><span class=nx>start</span><span class=p>:</span><span class=w> </span><span class=nx>tweet</span><span class=p>.</span><span class=nx>author</span><span class=p>,</span><span class=w> </span><span class=nx>end</span><span class=p>:</span><span class=w> </span><span class=nx>tweet</span><span class=p>.</span><span class=nx>author</span><span class=p>+</span><span class=s2>'~'</span><span class=p>}</span><span class=p>)</span><span class=w>
+    </span><span class=p>.</span><span class=p>.</span><span class=p>.</span></span></code></pre>
+</div>
+<div class=slide name=slide33.5>
+<h1>copy into feedDb.</h1>
+<pre><code class="lang-js"><span class=highlight><span class=w>  </span><span class=p>.</span><span class=p>.</span><span class=p>.</span><span class=w>
+    </span><span class=nx>followsDb</span><span class=p>.</span><span class=nx>createReadStream</span><span class=p>(</span><span class=p>{</span><span class=nx>start</span><span class=p>:</span><span class=w> </span><span class=nx>tweet</span><span class=p>.</span><span class=nx>author</span><span class=p>,</span><span class=w> </span><span class=nx>end</span><span class=p>:</span><span class=w> </span><span class=nx>tweet</span><span class=p>.</span><span class=nx>author</span><span class=p>+</span><span class=s2>'~'</span><span class=p>}</span><span class=p>)</span><span class=w>
+      </span><span class=p>.</span><span class=nx>pipe</span><span class=p>(</span><span class=nx>through</span><span class=p>(</span><span class=kd>function</span><span class=w> </span><span class=p>(</span><span class=nx>data</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+        </span><span class=kd>var</span><span class=w> </span><span class=nx>followed</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=nx>data</span><span class=p>.</span><span class=nx>key</span><span class=p>.</span><span class=nx>split</span><span class=p>(</span><span class=s2>'!'</span><span class=p>)</span><span class=p>.</span><span class=nx>pop</span><span class=p>(</span><span class=p>)</span><span class=w>
+        </span><span class=nx>this</span><span class=p>.</span><span class=nx>queue</span><span class=p>(</span><span class=p>{</span><span class=w>
+          </span><span class=nx>key</span><span class=p>:</span><span class=w> </span><span class=p>[</span><span class=nx>followed</span><span class=p>,</span><span class=w> </span><span class=nx>tweet</span><span class=p>.</span><span class=nx>id</span><span class=p>,</span><span class=w> </span><span class=nx>tweet</span><span class=p>.</span><span class=nx>author</span><span class=p>]</span><span class=p>.</span><span class=nx>join</span><span class=p>(</span><span class=s2>'!'</span><span class=p>)</span><span class=p>,</span><span class=w>
+          </span><span class=nx>value</span><span class=p>:</span><span class=w> </span><span class=nx>rawTweet</span><span class=p>,</span><span class=w> </span><span class=nx>type</span><span class=p>:</span><span class=w> </span><span class=s2>'put'</span><span class=w>
+        </span><span class=p>}</span><span class=p>)</span><span class=w>
+      </span><span class=p>}</span><span class=p>)</span><span class=p>)</span><span class=w>
+      </span><span class=p>.</span><span class=nx>pipe</span><span class=p>(</span><span class=nx>db</span><span class=p>.</span><span class=nx>createWriteStream</span><span class=p>(</span><span class=p>)</span><span class=p>)</span><span class=w>
+      </span><span class=p>.</span><span class=nx>on</span><span class=p>(</span><span class=s2>'close'</span><span class=p>,</span><span class=w> </span><span class=nx>done</span><span class=p>)</span><span class=w>
+  </span><span class=p>}</span><span class=p>)</span><span class=w>
+</span><span class=p>}</span><span class=p>)</span></span></code></pre>
+</div>
+<div class=slide name=slide34.5>
+<h1>Replication (Master -&gt; Slave)</h1>
+<pre><code class="lang-js"><span class=highlight><span class=kd>var</span><span class=w> </span><span class=nx>Master</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=nx>require</span><span class=p>(</span><span class=s2>'level-master'</span><span class=p>)</span><span class=w>
+</span><span class=kd>var</span><span class=w> </span><span class=nx>net</span><span class=w>    </span><span class=p>=</span><span class=w> </span><span class=nx>require</span><span class=p>(</span><span class=s2>'net'</span><span class=p>)</span><span class=w>
+
+</span><span class=kd>var</span><span class=w> </span><span class=nx>masterDb</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=nx>Master</span><span class=p>(</span><span class=nx>db</span><span class=p>)</span><span class=w> </span><span class=c>//can be section, or a whole DB.
+</span><span class=w>
+</span><span class=nx>net</span><span class=p>.</span><span class=nx>createServer</span><span class=p>(</span><span class=kd>function</span><span class=w> </span><span class=p>(</span><span class=nx>stream</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+  </span><span class=nx>stream</span><span class=p>.</span><span class=nx>pipe</span><span class=p>(</span><span class=nx>masterDb</span><span class=p>.</span><span class=nx>createStream</span><span class=p>(</span><span class=p>)</span><span class=p>)</span><span class=p>.</span><span class=nx>pipe</span><span class=p>(</span><span class=nx>stream</span><span class=p>)</span><span class=w>
+</span><span class=p>}</span><span class=p>)</span><span class=p>.</span><span class=nx>listen</span><span class=p>(</span><span class=nx>port</span><span class=p>)</span><span class=w>
+
+</span><span class=kd>var</span><span class=w> </span><span class=nx>slaveDb</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=nx>Master</span><span class=p>.</span><span class=nx>Slave</span><span class=p>(</span><span class=nx>db2</span><span class=p>)</span><span class=w>
+
+</span><span class=kd>var</span><span class=w> </span><span class=nx>s</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=nx>net</span><span class=p>.</span><span class=nx>connect</span><span class=p>(</span><span class=nx>port</span><span class=p>)</span><span class=w>
+</span><span class=nx>s</span><span class=p>.</span><span class=nx>pipe</span><span class=p>(</span><span class=nx>slaveDb</span><span class=p>.</span><span class=nx>createStream</span><span class=p>(</span><span class=p>)</span><span class=p>)</span><span class=p>.</span><span class=nx>pipe</span><span class=p>(</span><span class=nx>s</span><span class=p>)</span></span></code></pre>
+</div>
+<div class=slide name=slide35.5>
+<h1>uses for master-slave replication</h1>
+<ul>
+<li>write to single master,</li>
+<li><p>load balance reads to multiple slaves</p>
+</li>
+<li><p>~ OR ~</p>
+</li>
+<li><p>write to distributed masters,</p>
+</li>
+<li>aggreagate (map-reduce)</li>
+<li>replicate aggregation to single master</li>
+</ul>
+</div>
+<div class=slide name=slide36.5>
+<h1>Master-Master replication</h1>
+<pre><code class="lang-js"><span class=highlight><span class=kd>var</span><span class=w> </span><span class=nx>Master</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=nx>require</span><span class=p>(</span><span class=s2>'level-master'</span><span class=p>)</span><span class=w>
+</span><span class=kd>var</span><span class=w> </span><span class=nx>net</span><span class=w>    </span><span class=p>=</span><span class=w> </span><span class=nx>require</span><span class=p>(</span><span class=s2>'net'</span><span class=p>)</span><span class=w>
+
+</span><span class=kd>var</span><span class=w> </span><span class=nx>masterDb</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=nx>Master</span><span class=p>(</span><span class=nx>db</span><span class=p>)</span><span class=w> </span><span class=c>//can be section, or a whole DB.
+</span><span class=w>
+</span><span class=nx>net</span><span class=p>.</span><span class=nx>createServer</span><span class=p>(</span><span class=kd>function</span><span class=w> </span><span class=p>(</span><span class=nx>stream</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+  </span><span class=nx>stream</span><span class=p>.</span><span class=nx>pipe</span><span class=p>(</span><span class=nx>masterDb</span><span class=p>.</span><span class=nx>createStream</span><span class=p>(</span><span class=p>)</span><span class=p>)</span><span class=p>.</span><span class=nx>pipe</span><span class=p>(</span><span class=nx>stream</span><span class=p>)</span><span class=w>
+</span><span class=p>}</span><span class=p>)</span><span class=p>.</span><span class=nx>listen</span><span class=p>(</span><span class=nx>port</span><span class=p>)</span><span class=w>
+
+</span><span class=kd>var</span><span class=w> </span><span class=nx>master2Db</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=nx>Master</span><span class=p>(</span><span class=nx>db2</span><span class=p>)</span><span class=w>
+
+</span><span class=kd>var</span><span class=w> </span><span class=nx>s</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=nx>net</span><span class=p>.</span><span class=nx>connect</span><span class=p>(</span><span class=nx>port</span><span class=p>)</span><span class=w>
+</span><span class=nx>s</span><span class=p>.</span><span class=nx>pipe</span><span class=p>(</span><span class=nx>master2Db</span><span class=p>.</span><span class=nx>createStream</span><span class=p>(</span><span class=p>)</span><span class=p>)</span><span class=p>.</span><span class=nx>pipe</span><span class=p>(</span><span class=nx>s</span><span class=p>)</span></span></code></pre>
+</div>
+<div class=slide name=slide37.5>
+<h1>warning</h1>
+<ul>
+<li><p>Overwrites not reliable with Master-Master</p>
+</li>
+<li><p>deletes must be an update.</p>
+</li>
+</ul>
+<p>(will <em>just work</em> with twitter example)</p>
+</div>
+<div class=slide name=slide38.5>
+<h1>Disclaimer</h1>
+<p>master-slave is implemented,
+master-master next week...</p>
+</div>
+<div class=slide name=slide39.5>
+<h1>level-inverted-index</h1>
+<p>(index text stored in levelup.</p>
+<pre><code class="lang-js"><span class=highlight><span class=kd>var</span><span class=w> </span><span class=nx>Index</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=nx>require</span><span class=p>(</span><span class=s2>'level-inverted-index'</span><span class=p>)</span><span class=w>
+
+</span><span class=nx>Index</span><span class=p>(</span><span class=nx>db</span><span class=p>,</span><span class=w> </span><span class=s2>'index'</span><span class=p>,</span><span class=w> </span><span class=kd>function</span><span class=w> </span><span class=nx>map</span><span class=p>(</span><span class=nx>key</span><span class=p>,</span><span class=w> </span><span class=nx>value</span><span class=p>,</span><span class=w> </span><span class=nx>index</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+    </span><span class=c>//parse, and pull out any bits of text you want,
+</span><span class=w>    </span><span class=c>//call index with an index and a rank!
+</span><span class=w>
+    </span><span class=c>//here we split by anything that is not a letter
+</span><span class=w>    </span><span class=c>//or a number
+</span><span class=w>    </span><span class=nx>index</span><span class=p>(</span><span class=nx>value</span><span class=p>.</span><span class=nx>split</span><span class=p>(</span><span class=>/[^\w\d]+/</span><span class=p>)</span><span class=p>)</span><span class=w>
+  </span><span class=p>}</span><span class=p>,</span><span class=w> 
+  </span><span class=kd>function</span><span class=w> </span><span class=nx>stub</span><span class=p>(</span><span class=nx>doc</span><span class=p>,</span><span class=w> </span><span class=nx>query</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+    </span><span class=kd>return</span><span class=w> </span><span class=nx>doc</span><span class=p>.</span><span class=nx>substring</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span><span class=w> </span><span class=mi>140</span><span class=p>)</span><span class=w> </span><span class=p>+</span><span class=w> </span><span class=s2>'...\n'</span><span class=w>
+  </span><span class=p>}</span><span class=p>)</span></span></code></pre>
+</div>
+<div class=slide name=slide40.5>
+<h1>query inverted-index</h1>
+<pre><code class="lang-js"><span class=highlight><span class=nx>indexDb</span><span class=p>.</span><span class=nx>query</span><span class=p>(</span><span class=p>[</span><span class=s2>'search'</span><span class=p>,</span><span class=w> </span><span class=s2>'term'</span><span class=p>]</span><span class=p>,</span><span class=w> </span><span class=kd>function</span><span class=w> </span><span class=p>(</span><span class=nx>err</span><span class=p>,</span><span class=w> </span><span class=nx>docs</span><span class=p>)</span><span class=p>{</span><span class=w>
+  </span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>docs</span><span class=p>)</span><span class=w>
+</span><span class=p>}</span><span class=p>)</span><span class=w>
+
+</span><span class=c>//stream stubs of documents
+</span><span class=nx>indexDb</span><span class=p>.</span><span class=nx>createQueryStream</span><span class=p>(</span><span class=p>[</span><span class=s2>'search'</span><span class=p>,</span><span class=w> </span><span class=s2>'term'</span><span class=p>]</span><span class=p>)</span><span class=w>
+  </span><span class=p>.</span><span class=nx>on</span><span class=p>(</span><span class=s2>'data'</span><span class=p>,</span><span class=w> </span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>)</span></span></code></pre>
+<ul>
+<li>TODO: search json properties...</li>
+</ul>
+</div>
+<div class=slide name=slide41.5>
+<h1>level-* people</h1>
+<p>people who are hacking on cool stuff!</p>
+</div>
+<div class=slide name=slide42.5>
+<h1>rvagg</h1>
+<p><img src="./images/rvagg.png" alt="rvagg"></p>
+<ul>
+<li>levelup / leveldown</li>
+<li>level-session</li>
+<li>levelbot</li>
+</ul>
+</div>
+<div class=slide name=slide43.5>
+<h1>juliangruber</h1>
+<p><img src="./images/juliangruber.png" alt="juliangruber"></p>
+<ul>
+<li>multilevel</li>
+<li>level-store</li>
+<li>level-rpc</li>
+<li>level-schedule</li>
+<li>level-benchmark</li>
+</ul>
+</div>
+<div class=slide name=slide44.5>
+<h1>hij1nx</h1>
+<p><img src="./images/hij1nx.jpeg" alt="hij1nx"></p>
+<ul>
+<li>lev</li>
+<li>levelweb</li>
+</ul>
+</div>
+<div class=slide name=slide45.5>
+<h1>maxodgen</h1>
+<p><img src="./images/maxogden.png" alt="maxodgen"></p>
+<ul>
+<li>level.js</li>
+<li>voxel-level</li>
+</ul>
+</div>
+<div class=slide name=slide46.5>
+<h1>mcollina</h1>
+<p><img src="./images/mcollina.jpeg" alt="mcollina"></p>
+<ul>
+<li>levelgraph</li>
+</ul>
+</div>
+<div class=slide name=slide47.5>
+<h1>and many more...</h1>
+</div>
+<div class=slide name=slide48.5>
+<h1>TODO</h1>
+<ul>
+<li>ORM mapper</li>
+<li>universal search (index structure of json)</li>
+<li>jQueryesque selector syntax</li>
+<li>get running in phonegap</li>
+<li>time series data, trends, machine learning etc.</li>
+<li>geospatial data</li>
+</ul>
+</div>
+<div class=slide name=slide49.5>
+<h1>and much much more!</h1>
+<p><a href="https://github.com/rvagg/node-levelup/wiki/Modules">https://github.com/rvagg/node-levelup/wiki/Modules</a></p>
+<p>Thank You!</p>
+</div><script>
+var slides = [].slice.call(document.querySelectorAll('.slide'))
+var current = 0
+
+function show () {
+  slides.forEach(function (e, i) {
+    e.style.display = current === i ? 'block' : 'none'
+  })
+}
+
+show()
+
+window.onkeydown = function (e) {
+  var ch = ({39: 1, 37: -1})[e.keyCode] || 0
+  if(!ch) return
+  current = current + ch
+  current = Math.min(Math.max(current, 0), slides.length - 1)
+  console.log('current slide', current)
+  show()
+}
+</script>
